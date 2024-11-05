@@ -43,8 +43,13 @@ function alphabetPosition(text) {
 
     const string2 = alphabetPosition(keyReplacement())
     const array2 = string2.split(" ").map(Number);
-    console.log(array1)
-    console.log(array2)
+
+    const mod = 26;
+    console.log(array1);
+    console.log(array2);
+
+    const newArray = array1.map((num, index) => (num + array2[index]) % mod);
+    console.log(newArray);
   });
 
 
