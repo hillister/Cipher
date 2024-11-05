@@ -13,8 +13,8 @@ function alphabetPosition(text) {
       } 
     }
   
-    return result
-  }
+    return result.slice(0, result.length - 1);
+}
 
 
  
@@ -38,6 +38,13 @@ function alphabetPosition(text) {
     console.log(alphabetPosition(finalText));
     console.log(alphabetPosition(keyReplacement()));
 
+    const string1 = alphabetPosition(finalText)
+    const array1 = string1.split(" ").map(Number);
+
+    const string2 = alphabetPosition(keyReplacement())
+    const array2 = string2.split(" ").map(Number);
+    console.log(array1)
+    console.log(array2)
   });
 
 
