@@ -16,9 +16,15 @@ function alphabetPosition(text) {
     return result.slice(0, result.length - 1);
 }
 
+function changeNumberToLetter(numbers) {
+  let result = "";
+  for (let i = 0; i < numbers.length; i++) {
+    let letter = String.fromCharCode(numbers[i] + 65)
+      result += letter;
+  }
 
- 
-
+  return result;
+}
 
   submitBtn.addEventListener("click", function(event){
     event.preventDefault()
@@ -50,16 +56,10 @@ function alphabetPosition(text) {
 
     const newArray = array1.map((num, index) => (num + array2[index]) % mod);
     console.log(newArray);
+
+    console.log(changeNumberToLetter(newArray));
+
   });
 
 
-  //get elements - done
-
-  //change the letters into numbers as per the position in alphabet done
-
-// make the key replace every letter of the text done
-
-// remove punctuation
-  
-//add numbers of both text and key modulus 26 
 
