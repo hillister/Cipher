@@ -1,5 +1,5 @@
 const text = document.getElementById('text');
-const key = document.getElementById('key');
+const key = document.getElementById('keyInput');
 const submitBtn = document.getElementById('submit');
 
 
@@ -34,15 +34,12 @@ function changeNumberToLetter(numbers) {
     let finalText = textValue.split(" ").join("");
 
     function keyReplacement(){
-        let keyReplace = keyWord.repeat(finalText.length); 
+        let keyReplace = keyWord.repeat(Math.ceil(finalText.length / keyWord.length)); 
         let textLength = finalText.length
         let result = keyReplace.slice(0, textLength)
     
         return result
     }
-
-    console.log(alphabetPosition(finalText));
-    console.log(alphabetPosition(keyReplacement()));
 
     const string1 = alphabetPosition(finalText)
     const array1 = string1.split(" ").map(Number);
@@ -51,14 +48,12 @@ function changeNumberToLetter(numbers) {
     const array2 = string2.split(" ").map(Number);
 
     const mod = 26;
-    console.log(array1);
-    console.log(array2);
 
     const newArray = array1.map((num, index) => (num + array2[index]) % mod);
-    console.log(newArray);
 
     console.log(changeNumberToLetter(newArray));
-
+    let encryptedMessage = document.getElementById("encrypted-text");
+    encryptedMessage.textContent = changeNumberToLetter(newArray)
   });
 
 

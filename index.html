@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Vigenère Cipher</h1>
-    <div class="key">
-        <form>
-            <label>Key:</label>
-            <input type="text" id="key">
-        </form>
-    </div>
-    <div class="plain-text">
-        <form>
-            <label>Text to Encrypt:</label>
+    <div class="formMessage">
+        <h1 class="title">Vigenère Cipher</h1>
+        <form id="key">
+            <label id="keyText">Key:</label>
+            <input type="text" id="keyInput">
+
+            <label id="messageText">Text to Encrypt:</label>
             <input type="text" id="text">
+
             <button type="submit" id="submit">Encrypt</button>
         </form>
     </div>
-    <div class="encrypted-text"></div>
+    <div class="container">
+        <h3>Encrypted Text:</h3>
+        <div id="encrypted-text"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
